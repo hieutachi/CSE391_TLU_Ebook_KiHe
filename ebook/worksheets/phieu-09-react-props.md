@@ -5,7 +5,7 @@
 | **Buổi** | 9 |
 | **Thời lượng** | ≥ 45 phút (trên lớp ~20' + về nhà ~25–40') |
 | **Repo** | `cse391-cm-09` (project Vite) |
-| **Nhận từ Phiếu 08** | Dataset + tư duy render; CSS tái dùng từ P05 |
+| **Nhận từ Phiếu 08** | Dashboard JS thuần có Form Thêm (mốc 1); CSS tái dùng từ P05 |
 | **Mang sang Phiếu 10** | Cây component CampusMart tĩnh |
 | **Dataset** | [`CANONICAL-DATA.md`](./CANONICAL-DATA.md) — §5 (bản có `export`) |
 

@@ -5,7 +5,7 @@
 | **Buổi** | 6 |
 | **Thời lượng** | ≥ 45 phút (trên lớp ~20' + về nhà ~25–40') |
 | **Repo** | `cse391-cm-06` |
-| **Nhận từ Phiếu 05** | Landing tĩnh hoàn chỉnh |
+| **Nhận từ Phiếu 05** | Dashboard tĩnh hoàn chỉnh |
 | **Mang sang Phiếu 07** | `data.js` + `app.js` với các hàm helper |
 | **Dataset** | [`CANONICAL-DATA.md`](./CANONICAL-DATA.md) — §5 mảng JS, §3 stockLevel |
 

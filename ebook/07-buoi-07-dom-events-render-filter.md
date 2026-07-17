@@ -247,7 +247,7 @@ Nộp repo riêng `cse391-cm-07` + video OBS theo box cuối phiếu.
 
 ## 11. Cầu nối sang Buổi 8
 
-Trang đã tương tác — nhưng code dồn cả vào `app.js` và dữ liệu mất sạch mỗi lần F5. Buổi 8: tách **ES Module**, lưu **localStorage** (nhớ filter, danh sách đăng ký), và **validate form** bằng JS thay vì chỉ dựa `required`.
+Trang đã tương tác — nhưng code dồn cả vào `app.js`, dữ liệu mất sạch mỗi lần F5, và dashboard **chưa thêm được sản phẩm**. Buổi 8: tách **ES Module**, lưu **localStorage** (nhớ filter), **validate form** bằng JS — và ghép tất cả thành mốc 1: **Dashboard CRUD có Form Thêm**.
 
 → Tiếp: [Buổi 8](./08-buoi-08-module-localstorage-validate.md) · [Phiếu 08](./worksheets/phieu-08-module-localstorage.md)
 

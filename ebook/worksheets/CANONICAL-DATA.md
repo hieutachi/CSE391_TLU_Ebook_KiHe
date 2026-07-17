@@ -183,8 +183,9 @@ export const products = [
 |--------|---------|----------|
 | `cm-visible-count` | Đoạn text `Hien thi: N san pham` | P07 |
 | `cm-subscribe-form` | Form đăng ký nhận tin | P02 |
-| `cm-login-form` | Form login giả | P08 |
-| `cm-product-form` | Form thêm/sửa product (React) | P11 |
+| `cm-product-form` | **Form Thêm sản phẩm** (JS thuần → React) | P08, P11 |
+| `cm-subscriber-list` | Danh sách subscriber render từ localStorage | P08 |
+| `cm-login-form` | Form login giả (điểm cộng) | P08 |
 | `cm-category-form` | Form thêm/sửa category (React) | P12 |
 
 ### 8.4. Chuỗi thông báo exact (validate / login / CRUD)
@@ -194,8 +195,10 @@ export const products = [
 | `err_name` | `Ten toi thieu 2 ky tu` |
 | `err_email` | `Email khong hop le` |
 | `msg_subscribed` | `Dang ky thanh cong` |
+| `err_required` | `Thieu thong tin bat buoc` |
 | `err_sku_dup` | `SKU da ton tai` |
 | `err_price` | `Gia phai lon hon 0` |
+| `err_cat_dup` | `Danh muc da ton tai` |
 | `msg_login_ok` | `Dang nhap thanh cong` |
 | `err_login` | `Sai tai khoan hoac mat khau` |
 | `err_delete_category` | `Khong the xoa danh muc con san pham` |
@@ -216,7 +219,7 @@ export const products = [
 | `keychron` | KB-01 | **1** |
 | `xyz` | — | **0** |
 
-### 8.7. Product mới của P11 (Create)
+### 8.7. Product mới cho Form Thêm (P08 JS thuần & P11 React — cùng một ca kiểm)
 
 | sku | name | category | price | qty | line_total |
 |-----|------|----------|------:|----:|----------:|

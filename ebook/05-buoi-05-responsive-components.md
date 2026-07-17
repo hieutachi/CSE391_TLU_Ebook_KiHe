@@ -15,7 +15,7 @@ Sau Buổi 5, bạn có thể:
 2. Viết media query đúng breakpoint môn học: **640px** và **1024px**.
 3. Điều khiển số cột `.cm-grid` theo khung nhìn (1 → 2 → 4).
 4. Làm nav co giãn: dọc trên mobile, ngang từ tablet.
-5. Hoàn thiện trang landing CampusMart tĩnh: hero, section danh mục, lưới card, footer.
+5. Hoàn thiện dashboard CampusMart tĩnh: hero, section danh mục, lưới card, footer.
 
 ---
 
@@ -200,7 +200,7 @@ Kéo qua lại quanh 640px thấy nền đổi màu → hiểu breakpoint bằng
 | Phần | Làm gì | Chi tiết |
 |------|--------|----------|
 | **Trên lớp (~20')** | 2 media query 640/1024 cho grid + nav | [Phiếu 05 — mục 2](./worksheets/phieu-05-responsive-campusmart.md) |
-| **Về nhà (~25–40')** | Hero + hoàn thiện landing + quay 3 khung | [Phiếu 05 — mục 3](./worksheets/phieu-05-responsive-campusmart.md) |
+| **Về nhà (~25–40')** | Hero + hoàn thiện dashboard tĩnh + quay 3 khung | [Phiếu 05 — mục 3](./worksheets/phieu-05-responsive-campusmart.md) |
 
 Nộp repo riêng `cse391-cm-05` + video OBS theo box cuối phiếu.
 

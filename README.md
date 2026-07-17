@@ -10,7 +10,10 @@ Thư mục [`ebook/`](./ebook/README.md):
 - **12 phiếu học tập** (≥ 45 phút/phiếu): bài trên lớp + về nhà nối tiếp
 - **Hướng dẫn Project** buổi 13–15 (nhóm)
 
-**Đích bài tập về nhà (Phiếu 12):** tự xây **CampusMart UI bằng React** với **2 thực thể liên kết** (Category → Product), **CRUD đủ trên products** (và ít nhất Create/Edit danh mục hoặc quản lý rõ 2 thực thể). Không bắt buộc backend thật.
+**Hai mốc đầu ra của chuỗi phiếu:**
+
+1. **Phiếu 08 (JS thuần):** một **Dashboard CampusMart phục vụ CRUD, có Form Thêm** (stats + lọc + danh sách + thêm sản phẩm).
+2. **Phiếu 12 (đích cuối):** **ứng dụng React CRUD hoàn chỉnh** — 2 thực thể liên kết (Category → Product), đủ Thêm/Sửa/Xóa + quản lý danh mục. Không bắt buộc backend thật.
 
 Dataset & hợp đồng chấm (chuẩn bị Autograder):  
 [`ebook/worksheets/CANONICAL-DATA.md`](./ebook/worksheets/CANONICAL-DATA.md) · [`ebook/worksheets/GRADING-CONTRACT.md`](./ebook/worksheets/GRADING-CONTRACT.md)  

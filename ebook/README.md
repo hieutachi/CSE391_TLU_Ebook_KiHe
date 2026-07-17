@@ -17,7 +17,7 @@ Tài liệu tự học: **12 buổi** + **12 phiếu học tập** (chuỗi Camp
 | 5 | Responsive & UI components tĩnh | [05](./05-buoi-05-responsive-components.md) | [P05](./worksheets/phieu-05-responsive-campusmart.md) |
 | 6 | JavaScript nền: biến, hàm, mảng, DOM query | [06](./06-buoi-06-javascript-nen.md) | [P06](./worksheets/phieu-06-js-nen.md) |
 | 7 | DOM events, render list, filter | [07](./07-buoi-07-dom-events-render-filter.md) | [P07](./worksheets/phieu-07-dom-render-filter.md) |
-| 8 | Module JS, localStorage, form validate | [08](./08-buoi-08-module-localstorage-validate.md) | [P08](./worksheets/phieu-08-module-localstorage.md) |
+| 8 | Module JS, localStorage, validate — ★ Dashboard có Form Thêm | [08](./08-buoi-08-module-localstorage-validate.md) | [P08](./worksheets/phieu-08-module-localstorage.md) |
 | 9 | React khởi đầu: Vite, JSX, component, props | [09](./09-buoi-09-react-khoi-dau.md) | [P09](./worksheets/phieu-09-react-props.md) |
 | 10 | State & sự kiện; list/filter React | [10](./10-buoi-10-react-state-filter.md) | [P10](./worksheets/phieu-10-react-state-filter.md) |
 | 11 | Form Controlled + Create + validate UI | [11](./11-buoi-11-react-form-create.md) | [P11](./worksheets/phieu-11-react-create.md) |
@@ -34,8 +34,8 @@ Mỗi phiếu ≥ 45 phút; bài trên lớp và về nhà **nối tiếp**. Đ�
 
 ```
 P01–02  HTML ngữ nghĩa → Form / Media / a11y
-   → P03–05  CSS cascade/box → Flex/Grid → Responsive card/nav
-   → P06–08  JS nền → DOM events/filter → Module + localStorage
-   → P09–12  React: props → state/filter → Create → ★ CRUD 2 thực thể
+   → P03–05  CSS cascade/box → Flex/Grid → Dashboard tĩnh responsive
+   → P06–08  JS nền → render/filter → ★ Dashboard CRUD có Form Thêm (mốc 1)
+   → P09–12  React: props → state → ★ Ứng dụng CRUD hoàn chỉnh 2 thực thể (mốc 2)
    → Project nhóm (13–15)
 ```

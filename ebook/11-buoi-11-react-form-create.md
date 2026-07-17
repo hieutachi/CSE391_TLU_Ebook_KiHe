@@ -151,9 +151,9 @@ function handleCreate(item) {
 
 React so sánh **tham chiếu** mảng cũ/mới để biết có gì đổi. `push` giữ nguyên tham chiếu → React tưởng không có gì mới → không render. `[...products, item]` tạo mảng mới → render. Quy tắc này áp cho mọi update P12 (`map` để sửa, `filter` để xóa).
 
-### Ca kiểm chuẩn (CANONICAL §8.7)
+### Ca kiểm chuẩn (CANONICAL §8.7) — cùng ca với P08
 
-Thêm **MN-03 / AOC 27 inch / Man hinh / 4500000 / 2**:
+Đây chính là ca kiểm bạn đã chạy ở Phiếu 08 bằng JS thuần (`push` + tự gọi `render`/`renderStats`). Lần này React lo phần render — hãy so hai cách làm để thấy mình được gì. Thêm **MN-03 / AOC 27 inch / Man hinh / 4500000 / 2**:
 
 | Sau Create | Giá trị |
 |------------|--------:|

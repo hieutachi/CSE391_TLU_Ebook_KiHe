@@ -191,13 +191,14 @@ Dataset: [`CANONICAL-DATA.md`](./CANONICAL-DATA.md). **Đã khóa đủ P01–P1
 
 ---
 
-## P08 — Module, localStorage, Validate
+## P08 — Module, localStorage, Dashboard có Form Thêm ★ mốc JS thuần
 
 ### CLO
 
 1. 3 module export/import; 1 entry `type="module"`.  
 2. `cm_filter` persist qua F5.  
-3. Validate 2 quy tắc + lưu `cm_subscribers`; login giả `cm_auth`.
+3. Validate form đăng ký 2 quy tắc + lưu `cm_subscribers`.  
+4. **Form Thêm sản phẩm** (`cm-product-form`): validate 3 quy tắc → thêm → render + stats tự cộng (ca MN-03).
 
 ### EXPECT
 
@@ -209,9 +210,12 @@ Dataset: [`CANONICAL-DATA.md`](./CANONICAL-DATA.md). **Đã khóa đủ P01–P1
 | `validate.name` | `Ten toi thieu 2 ky tu` |
 | `validate.email` | `Email khong hop le` |
 | `validate.ok` | `Dang ky thanh cong` + append `cm_subscribers` |
-| `login.ok` | admin / `CampusMart@01` → `cm_auth="true"` + `Dang nhap thanh cong` |
-| `login.fail` | `Sai tai khoan hoac mat khau` |
+| `create.empty` | `Thieu thong tin bat buoc` |
+| `create.price` | `Gia phai lon hon 0` |
+| `create.dup` | `SKU da ton tai` (thử KB-01) |
+| `create.MN-03` | 9 card · Man hinh=3 · `Tong gia tri kho = 50380000` |
 | Giữ P07 | render/filter/sort nguyên vẹn |
+| Điểm cộng | login giả: admin/`CampusMart@01` → `cm_auth="true"` + `Dang nhap thanh cong`; sai → `Sai tai khoan hoac mat khau` |
 
 ---
 
@@ -315,9 +319,10 @@ Dataset: [`CANONICAL-DATA.md`](./CANONICAL-DATA.md). **Đã khóa đủ P01–P1
 
 | Chủ đề | Quy ước |
 |--------|---------|
-| Nền CORE_8 | P01–P10 + đầu P11/P12: 8 SKU, tổng **41380000** |
-| Sau Create MN-03 (chỉ P11) | 9 SP, tổng **50380000** |
+| Nền CORE_8 | P01–P07 + đầu P08/P11/P12: 8 SKU, tổng **41380000** |
+| Sau Create MN-03 (P08 JS thuần & P11 React — cùng ca kiểm) | 9 SP, tổng **50380000** |
 | Kịch bản P12 | từ CORE_8 (không mang MN-03 sang): 7 SP / 32880000 → 34770000 |
+| Mốc đầu ra | P08 = **Dashboard CRUD có Form Thêm (JS thuần)** · P12 = **ứng dụng React CRUD hoàn chỉnh 2 thực thể** |
 | Prefix marker | `CM_EXPECT` |
 | Credential | `admin` / `CampusMart@01` |
 | stockLevel | `Du` (≥5) / `Sap het` (≥2) / `Can nhap` |

@@ -1,7 +1,7 @@
 # BUỔI 6: JavaScript nền — biến, kiểu, hàm, mảng/object, DOM query
 
 > **Thời lượng gợi ý:** 4 giờ tự học  
-> **Tiên quyết:** Buổi 5 (landing CampusMart tĩnh hoàn chỉnh)  
+> **Tiên quyết:** Buổi 5 (dashboard CampusMart tĩnh hoàn chỉnh)  
 > **Kết quả đầu ra:** Viết được JS với `const/let`, hàm, mảng object; tính toán trên dataset CampusMart; query DOM và đổ số liệu vào trang  
 > **Phiếu học tập liên quan:** [Phiếu 06](./worksheets/phieu-06-js-nen.md) — chuỗi **CampusMart UI**
 

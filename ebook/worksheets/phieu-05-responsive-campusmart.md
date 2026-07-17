@@ -1,4 +1,4 @@
-# Phiếu 05 — Responsive CampusMart: landing hoàn chỉnh
+# Phiếu 05 — Responsive CampusMart: dashboard tĩnh hoàn chỉnh
 
 | | |
 |---|---|
@@ -6,7 +6,7 @@
 | **Thời lượng** | ≥ 45 phút (trên lớp ~20' + về nhà ~25–40') |
 | **Repo** | `cse391-cm-05` |
 | **Nhận từ Phiếu 04** | Header flex + `.cm-grid` 8 card |
-| **Mang sang Phiếu 06** | Landing tĩnh hoàn chỉnh — nền cho JS render |
+| **Mang sang Phiếu 06** | Dashboard tĩnh hoàn chỉnh — nền cho JS render |
 | **Dataset** | [`CANONICAL-DATA.md`](./CANONICAL-DATA.md) — §8.1 breakpoints 640/1024 |
 
 ### Chuẩn đầu ra (CLO)
@@ -61,7 +61,7 @@ DevTools ở 375px → 1 cột + nav dọc; 700px → 2 cột + nav ngang; 1200p
 
 ---
 
-## 3. Bài về nhà (~25–40 phút) — Landing hoàn chỉnh
+## 3. Bài về nhà (~25–40 phút) — Dashboard tĩnh hoàn chỉnh
 
 Tiếp tục **cùng repo**.
 
@@ -128,4 +128,4 @@ Tự kiểm từng khung (chính là kịch bản OBS):
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-> **Mốc quan trọng:** Đây là bản CampusMart **tĩnh** hoàn chỉnh — từ Phiếu 06, dữ liệu chuyển vào JavaScript.
+> **Mốc quan trọng:** Đây là bản **Dashboard CampusMart tĩnh** hoàn chỉnh (khung stats + catalog + form sẽ "sống" dần) — từ Phiếu 06, dữ liệu chuyển vào JavaScript, đến Phiếu 08 dashboard có Form Thêm.

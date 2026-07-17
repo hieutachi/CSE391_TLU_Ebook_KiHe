@@ -2,7 +2,7 @@
 
 > **Thời lượng gợi ý:** 4–5 giờ tự học  
 > **Tiên quyết:** Buổi 11 (products là state + Create)  
-> **Kết quả đầu ra:** CRUD đủ trên products (sửa/xóa bằng `map`/`filter` bất biến); categories thành thực thể quản lý được (thêm/sửa, chặn xóa khi còn hàng)  
+> **Kết quả đầu ra:** **Ứng dụng React CRUD hoàn chỉnh** (mốc 2): đủ Thêm/Sửa/Xóa trên products bằng `map`/`filter` bất biến; categories thành thực thể quản lý được (thêm/sửa, chặn xóa khi còn hàng)  
 > **Phiếu học tập liên quan:** [Phiếu 12](./worksheets/phieu-12-react-crud.md) — **đích cuối chuỗi CampusMart**
 
 ---

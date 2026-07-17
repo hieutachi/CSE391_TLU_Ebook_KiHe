@@ -22,7 +22,7 @@ Sau Buổi 9, bạn có thể:
 
 ## 2. Vì sao React — sau khi đã làm được bằng JS thuần?
 
-Nhìn lại `render(list)` của Buổi 7: xóa sạch grid rồi vẽ lại. Trang nhỏ thì ổn; trang lớn thì chậm và mất trạng thái (con trỏ trong input, vị trí cuộn). Và cứ thêm một trạng thái (filter + search + sort + auth) là thêm một mớ code "đồng bộ hóa DOM" dễ sai.
+Nhìn lại Dashboard của Phiếu 08: sau mỗi lần thêm sản phẩm, bạn phải **tự nhớ** gọi `render()` rồi `renderStats()` — quên một cái là UI lệch dữ liệu. Trang nhỏ thì ổn; cứ thêm một trạng thái (filter + search + sort + form) là thêm một mớ code "đồng bộ hóa DOM" dễ sai, và cách "xóa sạch grid vẽ lại" làm mất trạng thái (con trỏ trong input, vị trí cuộn).
 
 React đề nghị một thỏa thuận:
 

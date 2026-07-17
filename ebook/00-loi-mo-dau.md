@@ -24,18 +24,19 @@ Lý do rất đơn giản:
 
 Song song 12 buổi là **12 phiếu học tập** (≥ 45 phút/phiếu). Mỗi phiếu có phần **trên lớp** và **về nhà** nối tiếp trên cùng chuỗi dữ liệu **CampusMart** — cửa hàng / catalog sản phẩm campus (bàn phím, chuột, màn hình… cùng miền số liệu quen thuộc với MiniShop Backend).
 
-Đích cuối phiếu về nhà:
+Chuỗi có **hai mốc đầu ra** rõ ràng:
 
-> **Tự xây CampusMart UI bằng React: 2 thực thể liên kết (Category → Product), chọn danh mục → lọc/hiển thị, CRUD đủ trên products (và quản lý rõ 2 thực thể). Không bắt buộc backend thật.**
+> **Mốc 1 (hết Phiếu 08 — JS thuần):** một **Dashboard CampusMart phục vụ công tác CRUD, có Form Thêm** — stats, lọc danh mục, danh sách sản phẩm, thêm sản phẩm mới.  
+> **Mốc 2 (Phiếu 12 — đích cuối):** **ứng dụng React CRUD hoàn chỉnh** — 2 thực thể liên kết (Category → Product), chọn danh mục → lọc/hiển thị, đủ Thêm/Sửa/Xóa trên products + quản lý danh mục. Không bắt buộc backend thật.
 
 ### Mục tiêu xuyên suốt 12 buổi + 12 phiếu
 
 | Giai đoạn | Buổi / Phiếu | Bạn sẽ đạt được |
 |-----------|--------------|-----------------|
 | HTML | 1–2 / P01–P02 | Trang ngữ nghĩa + Form/Media + a11y cơ bản |
-| CSS | 3–5 / P03–P05 | Cascade, box model → Flex/Grid → Responsive CampusMart |
-| JavaScript | 6–8 / P06–P08 | DOM, events, filter list → Module + localStorage |
-| React | 9–12 / P09–P12 | Props → State/filter → Create → **CRUD 2 thực thể** (đích) |
+| CSS | 3–5 / P03–P05 | Cascade, box model → Flex/Grid → Dashboard tĩnh responsive |
+| JavaScript | 6–8 / P06–P08 | DOM, events, filter → ★ **Dashboard CRUD có Form Thêm** (mốc 1) |
+| React | 9–12 / P09–P12 | Props → State/filter → Create → ★ **Ứng dụng CRUD hoàn chỉnh 2 thực thể** (mốc 2) |
 | Project nhóm | 13–15 | Routing, fetch API giả, deploy (điểm Cộng) |
 
 ### Cách dùng hiệu quả
