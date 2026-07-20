@@ -2,6 +2,10 @@
 
 Tài liệu tự học: **12 buổi** + **12 phiếu học tập** (chuỗi CampusMart UI) + **Project cuối môn**.
 
+Mỗi buổi là **một chương đủ đọc–học–làm** (không phải slide tóm tắt): §0 lịch trình GV, hình ảnh nhớ, ASCII, bảng so sánh, *Thử ngay trên máy*, câu tự kiểm tra. Phiếu cùng số có mục **Cách thử** chi tiết (DevTools, Console, OBS).
+
+**Hai mốc đầu ra:** [P08](./worksheets/phieu-08-module-localstorage.md) Dashboard JS có Form Thêm · [P12](./worksheets/phieu-12-react-crud.md) React CRUD 2 thực thể.
+
 ## Phần 0 — Giới thiệu
 
 - [Lời mở đầu](./00-loi-mo-dau.md)

@@ -6,7 +6,7 @@
 | **Thời lượng** | ≥ 45 phút (trên lớp ~20' + về nhà ~25–40') |
 | **Repo** | `cse391-cm-11` (project Vite — copy từ P10) |
 | **Nhận từ Phiếu 10** | State filter/search + FilterBar |
-| **Mang sang Phiếu 12** | products trong state + ProductForm — nền cho Update/Delete |
+| **Mang sang Phiếu 12** | products trong state + ProductForm — nền Update/Delete |
 | **Dataset** | [`CANONICAL-DATA.md`](./CANONICAL-DATA.md) — §8.7 MN-03, §8.4 thông báo |
 
 ### Chuẩn đầu ra (CLO)
@@ -25,6 +25,7 @@
 - Object form state: `setForm({ ...form, [name]: value })`.
 - Submit: `preventDefault` → validate → `onCreate(item)` → reset.
 - Bất biến: **không** `push`; ép `Number()` cho price/qty/category_id.
+- Cùng ca MN-03 với P08 — cùng số 9 / 3 / 50380000.
 
 Chi tiết: [Buổi 11](../11-buoi-11-react-form-create.md).
 
@@ -37,54 +38,73 @@ Chi tiết: [Buổi 11](../11-buoi-11-react-form-create.md).
 Copy project P10 sang `cse391-cm-11`, rồi:
 
 1. `index.html`: `<title>` exact: **`CampusMart — React Create (Buoi 11)`**.
-2. Đổi `products` thành state trong `App` (seed từ `data.js`). Chạy lại — filter/search/stats **phải y nguyên** (nếu vỡ tức là chỗ nào đó import cứng mảng thay vì nhận props).
-3. Dựng `ProductForm` với 5 field controlled: `sku`, `name`, `category_id` (select build từ `categories.map`, option đầu `-- Chon danh muc --`), `price` (number), `qty` (number). Nút submit text: `Them san pham`.
-4. Submit tạm thời chỉ `console.log(form)` — kiểm object đủ 5 key.
+2. Đổi `products` thành state trong `App` (seed từ `data.js`). Chạy lại — filter/search/stats **phải y nguyên**.
+3. Dựng `ProductForm` với 5 field controlled: `sku`, `name`, `category_id` (select từ `categories.map`, option đầu `-- Chon danh muc --`), `price`, `qty`. Nút: `Them san pham`.
+4. Submit tạm `console.log(form)` — kiểm object đủ 5 key.
 
-### Output kỳ vọng (trên lớp)
+### Cách thử trên lớp (OBS)
 
-Gõ vào từng field → console log ra object cập nhật đúng key; không mất focus, không reload.
+| # | Thử | Dự đoán | Quan sát |
+|---|-----|---------|----------|
+| T1 | Title | `CampusMart — React Create (Buoi 11)` | Tab |
+| T2 | Filter vẫn 8/3/3/2 | Như P10 | UI |
+| T3 | Gõ từng field | Không mất focus | Controlled |
+| T4 | Submit → console | Object đủ 5 key | DevTools / Console |
+| T5 | React DevTools | `form` đổi theo phím | Components |
 
-**Checkpoint giảng viên:** React DevTools thấy state `form` đổi theo từng phím gõ.
+**Checkpoint giảng viên:** form controlled + products đã là state.
 
 ---
 
 ## 3. Bài về nhà (~25–40 phút) — Validate + Create thật
 
-Tiếp tục **cùng project**.
-
 ### Nhiệm vụ A — Validate
 
-Trong `handleSubmit`, thứ tự kiểm:
-
 | # | Điều kiện lỗi | Chuỗi exact |
-|---|---------------|--------------|
+|---|---------------|-------------|
 | 1 | sku/name/category_id rỗng | `Thieu thong tin bat buoc` |
 | 2 | `Number(price) <= 0` | `Gia phai lon hon 0` |
-| 3 | SKU đã có trong products | `SKU da ton tai` |
+| 3 | SKU đã có | `SKU da ton tai` |
 
-Lỗi hiện trong `<p aria-live="polite" data-testid="cm-form-msg">` (nối `. ` nếu nhiều lỗi); có lỗi thì **không** thêm.
+Hiện trong `<p aria-live="polite" data-testid="cm-form-msg">`.
+
+#### Cách thử A (OBS)
+
+| # | Thử | Kỳ vọng |
+|---|-----|---------|
+| A1 | Submit rỗng | Msg exact required |
+| A2 | Giá 0 | `Gia phai lon hon 0` |
+| A3 | SKU KB-01 | `SKU da ton tai` |
+| A4 | Có lỗi | **Không** tăng số card |
 
 ### Nhiệm vụ B — Create bất biến
 
-Hợp lệ → `onCreate` đẩy lên `App`: `setProducts([...products, item])` (item đã `Number()` hóa price/qty/category_id, `trim()` chuỗi). Sau đó reset form + xóa msg.
+`setProducts([...products, item])` + reset form + xóa msg. Item đã `Number()` + `trim()`.
 
-### Nhiệm vụ C — Ca kiểm chuẩn MN-03
+#### Cách thử B
 
-Nhập đúng: `MN-03` / `AOC 27 inch` / `Man hinh` / `4500000` / `2` → kiểm:
+| # | Thử | Kỳ vọng |
+|---|-----|---------|
+| B1 | Không dùng push | Đọc code / demo push hỏng |
+| B2 | Sau thêm thành công | Field rỗng |
+
+### Nhiệm vụ C — Ca MN-03 (cùng P08)
+
+Nhập: `MN-03` / `AOC 27 inch` / `Man hinh` / `4500000` / `2`
 
 | Kiểm tra | Giá trị |
 |----------|--------:|
-| Card ở Tat ca | **9** |
-| Filter Man hinh | **3** (MN-01, MN-02, MN-03) |
-| `Tong gia tri kho` trong Stats | **50380000** |
-| `Hien thi: 9 san pham` | đúng count |
+| Card Tat ca | **9** |
+| Filter Man hinh | **3** |
+| Tong gia tri kho | **50380000** |
 
-Thử tiếp ca lỗi: nhập lại `KB-01` → `SKU da ton tai`, vẫn 9 card.
+#### Cách thử C (OBS — đọc to)
 
-### Nhiệm vụ D — Điểm cộng (không bắt buộc)
+Quay video: đọc to **9**, **3**, **50380000**. Thử lại KB-01 → dup, vẫn 9.
 
-Persist `products` vào localStorage key `cm_products` (đọc khi khởi tạo state, ghi mỗi lần đổi) — kiến thức P08. Ghi rõ trong README repo nếu làm.
+### Nhiệm vụ D — Điểm cộng
+
+Persist `cm_products` localStorage (P08). Ghi README nếu làm.
 
 ### Nhiệm vụ E — Marker
 
@@ -107,8 +127,19 @@ Persist `products` vào localStorage key `cm_products` (đọc khi khởi tạo 
 | `create.MN-03.count` | 9 card |
 | `create.MN-03.manhinh` | 3 card khi filter Man hinh |
 | `create.MN-03.inventory` | 50380000 trong Stats |
-| `form.reset` | các field rỗng sau thêm thành công |
-| `immutable` | không dùng `push` trên state |
+| `form.reset` | field rỗng sau thêm thành công |
+| `immutable` | không `push` trên state |
+
+### Checklist tự chấm
+
+```
+[ ] title P11
+[ ] products state
+[ ] 3 msg exact
+[ ] MN-03 → 9 / 3 / 50380000
+[ ] form reset
+[ ] CM_EXPECT
+```
 
 ---
 
@@ -128,3 +159,19 @@ Persist `products` vào localStorage key `cm_products` (đọc khi khởi tạo 
 ║     không phải push?                                         ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
+
+---
+
+## 6. Lỗi thường gặp khi nộp
+
+| Lỗi | Hậu quả | Cách tránh |
+|-----|---------|------------|
+| push | Không render / trừ immutable | spread |
+| Sai chuỗi lỗi (dấu, hoa thường) | EXPECT fail | Copy §8.4 |
+| Quên Number category_id | Filter không thấy MN-03 | Ép số |
+| Stats hard-code | Tổng không 50380000 | reduce từ state |
+| Title Buoi 10 | page_title fail | §8.2 P11 |
+
+---
+
+*CSE391 – Phiếu 11 | CampusMart UI — bản viết lại CSE485*

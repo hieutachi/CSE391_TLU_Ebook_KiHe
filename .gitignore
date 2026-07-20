@@ -10,3 +10,7 @@ Thumbs.db
 node_modules/
 dist/
 .vite/
+
+# Bản nháp nội bộ GV (đã merge vào ebook/)
+ebook/_rewrite/
+write-test-agent.txt

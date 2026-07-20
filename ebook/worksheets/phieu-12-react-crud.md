@@ -15,7 +15,7 @@
 2. Update product: nút `Sua` đổ dữ liệu vào form chung, submit bằng `map` bất biến; nhãn nút đổi `Them san pham` ↔ `Cap nhat san pham`.  
 3. `categories` thành state: thêm danh mục qua `cm-category-form`; DM mới tự vào cả 2 select.  
 4. Chặn xóa danh mục còn sản phẩm với thông báo exact; xóa được danh mục rỗng.  
-5. Chạy đúng **kịch bản 5 bước** §8.8 với từng con số khớp.
+5. Chạy đúng **kịch bản 5 bước** §8.8 với từng con số khớp (**32880000**, **34770000**).
 
 ---
 
@@ -25,6 +25,7 @@
 - Delete: `window.confirm` → `products.filter(p => p.sku !== sku)`.
 - Form chung: state `editingSku` (null = Create); check trùng SKU **chỉ khi Create**.
 - Liên thực thể: đếm products theo `category_id` trước khi cho xóa category.
+- P12 = **ứng dụng React CRUD hoàn chỉnh** (mốc 2).
 
 Chi tiết: [Buổi 12](../12-buoi-12-react-crud-2-thuc-the.md).
 
@@ -41,38 +42,60 @@ Copy project P11 sang `cse391-cm-12`, rồi:
 3. `Xoa`: confirm (`Xoa san pham {name}?`) → `setProducts(products.filter(...))`.
 4. `Sua` (bản tối giản trên lớp): `prompt` số lượng mới → `handleUpdate(sku, { qty: Number(...) })` bằng `map`. (Về nhà thay bằng form tử tế.)
 
-### Output kỳ vọng (trên lớp)
+### Cách thử trên lớp (OBS)
 
-- Xóa MS-03 → còn 7 card, stats tự trừ; Cancel confirm → không xóa.
-- Sửa qty KB-02 5 → 1 → badge stockLevel đổi `Du` → `Can nhap` (nếu có badge), tổng tự tính lại.
+| # | Thử | Dự đoán | Quan sát |
+|---|-----|---------|----------|
+| T1 | Title | `CampusMart — React CRUD (Buoi 12)` | Tab |
+| T2 | Xoa MS-03 → Cancel | Vẫn đủ card | confirm |
+| T3 | Xoa MS-03 → OK | −1 card, stats giảm | UI |
+| T4 | Sua KB-02 qty 5→1 | Tổng đổi; stockLevel đổi nếu có | UI |
+| T5 | Không splice | Code review | Source |
 
-**Checkpoint giảng viên:** xóa + sửa chạy; console không lỗi; mảng gốc không mutate (không dùng `splice`).
+**Checkpoint giảng viên:** xóa + sửa chạy; không mutate bằng splice.
 
 ---
 
-## 3. Bài về nhà (~25–40 phút) — Form Edit chung + thực thể categories
+## 3. Bài về nhà (~25–40 phút) — Form Edit + categories + kịch bản
 
-Tiếp tục **cùng project** (reset data về CORE_8 trước khi quay video).
+**Reset data về CORE_8** trước khi quay video (không mang MN-03).
 
 ### Nhiệm vụ A — Form dùng chung Create/Edit
 
-1. State `editingSku` trong `App` (mặc định `null`).
-2. `Sua` trên card → đổ product vào form (`setForm`), set `editingSku`.
-3. Submit: nếu `editingSku` → update bằng `map` (giữ nguyên SKU, không check trùng); ngược lại → Create như P11.
-4. Nhãn nút: `Cap nhat san pham` khi đang edit; kèm nút `Huy` để thoát edit (reset form + `editingSku=null`).
+1. State `editingSku` (mặc định `null`).
+2. `Sua` → đổ product vào form, set `editingSku`.
+3. Submit: nếu `editingSku` → update `map` (giữ SKU, không check trùng); else Create như P11.
+4. Nhãn: `Cap nhat san pham` khi edit; nút `Huy`.
+
+#### Cách thử A
+
+| # | Thử | Kỳ vọng |
+|---|-----|---------|
+| A1 | Bấm Sua KB-01 | Form đầy dữ liệu, nút Cap nhat |
+| A2 | Đổi qty → submit | Card + stats đổi, không thêm card |
+| A3 | Huy | Form reset, về Them san pham |
+| A4 | Edit không báo dup chính SKU | Không `SKU da ton tai` |
 
 ### Nhiệm vụ B — Quản lý categories
 
 1. `categories` thành state.
-2. `CategoryManager` với form `data-testid="cm-category-form"`: input tên + nút `Them danh muc`.
-   - Tên rỗng → `Thieu thong tin bat buoc`; trùng tên → `Danh muc da ton tai`.
-   - Hợp lệ → thêm `{ id: maxId+1, name, description: "" }`.
-3. Mỗi danh mục trong danh sách có nút `Xoa`:
-   - Còn sản phẩm → chặn + msg exact `Khong the xoa danh muc con san pham`.
+2. `CategoryManager` + `data-testid="cm-category-form"`: input + `Them danh muc`.
+   - Rỗng → `Thieu thong tin bat buoc`; trùng → `Danh muc da ton tai`.
+   - Hợp lệ → `{ id: maxId+1, name, description: "" }`.
+3. Nút `Xoa` từng DM:
+   - Còn SP → `Khong the xoa danh muc con san pham`.
    - Rỗng → confirm → xóa.
-4. Kiểm lan tỏa: DM mới hiện ở `CategoryList`, select filter, select ProductForm (cả 3 phải `map` từ state).
+4. Lan tỏa: CategoryList + 2 select đều `map` state.
 
-### Nhiệm vụ C — Kịch bản 5 bước (quay video đúng thứ tự này)
+#### Cách thử B
+
+| # | Thử | Kỳ vọng |
+|---|-----|---------|
+| B1 | Them `Phu kien` | 4 option ở filter + form |
+| B2 | Xoa Chuot | Msg exact, vẫn còn Chuot |
+| B3 | Xoa Phu kien | Về 3 DM |
+
+### Nhiệm vụ C — Kịch bản 5 bước (OBS — đúng thứ tự)
 
 | Bước | Thao tác | Số phải khớp |
 |------|----------|--------------|
@@ -81,6 +104,10 @@ Tiếp tục **cùng project** (reset data về CORE_8 trước khi quay video).
 | 3 | Them danh muc `Phu kien` | 2 select đều 4 DM |
 | 4 | Xoa danh muc `Chuot` | chặn + msg exact |
 | 5 | Xoa danh muc `Phu kien` | xóa được, về 3 DM |
+
+#### Cách thử C (đọc to trên video)
+
+Đọc to **32880000** sau bước 1; **34770000** sau bước 2; đọc msg chặn bước 4.
 
 ### Nhiệm vụ D — Marker
 
@@ -106,6 +133,19 @@ Tiếp tục **cùng project** (reset data về CORE_8 trước khi quay video).
 | `category.delete_empty` | xóa `Phu kien` khi 0 SP → OK |
 | `immutable` | không `push`/`splice` trên state |
 
+### Checklist tự chấm
+
+```
+[ ] title P12
+[ ] Sua/Xoa + confirm
+[ ] form Edit chung + Huy
+[ ] cm-category-form + Phu kien
+[ ] chặn xóa Chuot — msg exact
+[ ] 32880000 → 34770000
+[ ] CM_EXPECT
+[ ] reset CORE_8 trước video
+```
+
 ---
 
 ## 5. Box nộp bài
@@ -124,4 +164,20 @@ Tiếp tục **cùng project** (reset data về CORE_8 trước khi quay video).
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-> **Chúc mừng!** Hoàn thành phiếu này là bạn đã tự xây CampusMart UI React với 2 thực thể liên kết + CRUD — đích cuối của cả chuỗi. Sẵn sàng cho Project nhóm (Buổi 13–15).
+> **Chúc mừng!** Hoàn thành phiếu này = CampusMart UI React 2 thực thể + CRUD — đích cuối chuỗi. Sẵn sàng Project nhóm (Buổi 13–15).
+
+---
+
+## 6. Lỗi thường gặp khi nộp
+
+| Lỗi | Hậu quả | Cách tránh |
+|-----|---------|------------|
+| Video còn MN-03 | Sai 32880000 | Reset CORE_8 |
+| Msg tự viết | EXPECT fail | Exact §8.4 |
+| splice/push | Trừ immutable | map/filter/spread |
+| Quên Huy / nhãn Cap nhat | CLO form chung | Checklist A |
+| Title Buoi 11 | page_title fail | §8.2 P12 |
+
+---
+
+*CSE391 – Phiếu 12 ★ | CampusMart UI — bản viết lại CSE485*

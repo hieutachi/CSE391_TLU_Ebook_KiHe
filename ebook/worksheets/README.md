@@ -1,6 +1,8 @@
 # Phần 2 — 12 Phiếu học tập (chuỗi xuyên suốt CampusMart UI)
 
-Mỗi phiếu gắn **1 buổi** (~45–60 phút). Bài **trên lớp** và **về nhà** nối tiếp.
+Mỗi phiếu gắn **1 buổi** (~45–60 phút trên lớp + về nhà nối tiếp). **Đọc Buổi trước, làm Phiếu sau** — phiếu không thay thế lý thuyết; nó là checklist nghiệm thu + kịch bản OBS.
+
+Mỗi phiếu có mục **Cách thử / tự kiểm** — chạy đúng thứ tự trước khi quay video nộp.
 
 > **Mốc 1 (Phiếu 08 — JS thuần):** Dashboard CampusMart phục vụ CRUD, **có Form Thêm**.  
 > **Mốc 2 — đích cuối (Phiếu 12):** **ứng dụng React CRUD hoàn chỉnh** — 2 thực thể liên kết (Category ↔ Product), đủ Thêm/Sửa/Xóa + quản lý danh mục. Không bắt buộc backend thật.
